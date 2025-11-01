@@ -33,7 +33,7 @@ python312.zip
 pythonw.exe
 web2py.bat
 welcome.w2p
-
+NEWINSTALL
 
 ### To include only specific apps, uncomment:
 #/applications/*
