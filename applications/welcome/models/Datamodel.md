@@ -39,6 +39,7 @@ erDiagram
         int id
         int player_set_id
         bool drafted
+        string commish_email
     }
     player_set ||--|{ players_player_sets : id
     player_set {
