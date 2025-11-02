@@ -26,7 +26,12 @@ if request.global_settings.web2py_version < "2.15.5":
 # -------------------------------------------------------------------------
 configuration = AppConfig(reload=True)
 
-if not request.env.web2py_runtime_gae:
+if configuration.get('db.dbtype') == 'mysql':
+    url = 'mysql://'+configuration.get('db.uname')+':'+configuration.get('db.pwd')
+    url = url+'@'+configuration.get('db.url')
+    #mysql://uname:pwd@dataprocessing.mysql.pythonanywhere-services.com/databasename
+    db = DAL(url+configuration.get('db.dbname'))
+elif not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
