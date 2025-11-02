@@ -54,6 +54,7 @@ erDiagram
     player {
         int id
         string name
+        string image_path
     }
     players_moves ||--|{ move : id
     players_moves {
