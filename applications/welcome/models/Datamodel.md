@@ -31,15 +31,17 @@ erDiagram
     }
     users_leagues ||--|{ league : id
     users_leagues {
+        int id
         int league_id
-        string user_email
+        int user_id
     }
     league ||--|{ player_set: id
     league {
         int id
         int player_set_id
         bool drafted
-        string commish_email
+        int commish_id
+        string name
     }
     player_set ||--|{ players_player_sets : id
     player_set {
