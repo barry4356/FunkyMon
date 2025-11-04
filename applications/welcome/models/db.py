@@ -105,8 +105,9 @@ db.define_table('player_set',
 db.define_table('league',
                 Field('player_set_id', 'reference player_set'),
                 Field('drafted', 'boolean'),
-                Field('commish_id', 'reference auth_user'))
-                
+                Field('commish_id', 'reference auth_user'),
+                Field('name', 'string'))
+
 db.define_table('users_leagues',
                 Field('league_id', 'reference league'),
                 Field('user_id', 'reference auth_user'))
