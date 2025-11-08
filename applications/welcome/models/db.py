@@ -54,7 +54,7 @@ else:
     # from google.appengine.api.memcache import Client
     # session.connect(request, response, db = MEMDB(Client()))
     # ---------------------------------------------------------------------
-
+    
 # -------------------------------------------------------------------------
 # by default give a view/generic.extension to all actions from localhost
 # none otherwise. a pattern can be 'controller/function.extension'
@@ -98,6 +98,19 @@ auth = Auth(db, host_names=configuration.get('host.names'))
 # -------------------------------------------------------------------------
 auth.settings.extra_fields['auth_user'] = []
 auth.define_tables(username=False, signature=False)
+
+db.define_table('player_set',
+                Field('name', 'string'))
+
+db.define_table('league',
+                Field('player_set_id', 'reference player_set'),
+                Field('drafted', 'boolean'),
+                Field('commish_id', 'reference auth_user'),
+                Field('name', 'string'))
+
+db.define_table('users_leagues',
+                Field('league_id', 'reference league'),
+                Field('user_id', 'reference auth_user'))
 
 # -------------------------------------------------------------------------
 # configure email
