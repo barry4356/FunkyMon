@@ -21,6 +21,7 @@
     - open the repository folder
     - open `cmd` command line window
     - type: `python.exe web2py.py` to launch a local server
+	- **Note**: can also run the `launch_dev.bat` script (uses the same commands as above)
 ### Workflow
 * Name any personal/feature branches whatever you want
 * `development` branch is what is deployed to [dataprocessing.pythonanywhere.com](https://dataprocessing.pythonanywhere.com/welcome/default/index)
