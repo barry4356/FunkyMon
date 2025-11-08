@@ -1,1 +1,1 @@
-python.exe web2py.py
+python web2py.py -a "password"

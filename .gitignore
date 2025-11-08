@@ -9,6 +9,7 @@
 /applications/*/private/
 /applications/*/uploads/*
 /applications/*/.hg/
+/applications/*/logs
 !/applications/
 *.pyd
 *.dll

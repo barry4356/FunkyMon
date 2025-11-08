@@ -3,7 +3,7 @@
 # This is a sample controller
 # this file is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
-
+import league
 # ---- example index page ----
 def index():
     response.flash = T("Hello World")
